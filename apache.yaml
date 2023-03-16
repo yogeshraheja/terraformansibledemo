@@ -1,0 +1,18 @@
+---
+- name: Apache demo
+  hosts: "all"
+  
+  tasks:
+    - name: Pkg installation
+      yum:
+        name: httpd
+        state: present
+    - name: Home page file
+      copy:
+        dest: "/var/www/html/index.html"
+        content: "<h1>This is terraform and ansible demo</h1>"
+    - name: Service start
+      service:
+        name: httpd
+        state: started
+        enabled: true
