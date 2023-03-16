@@ -10,6 +10,6 @@ resource "aws_instance" "centos" {
 }
 resource "null_resource" "create_inventory" {
   provisioner "local-exec" {
-    command = "echo ${aws_instance.centos.private_ip} ansible_user=root ansible_password=thinknyx@123 > ./inventory"
+    command = "echo ${aws_instance.centos.private_ip} ansible_user=root ansible_password=xxxxxx > ./inventory"
   }
 }
